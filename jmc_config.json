@@ -1,0 +1,7 @@
+{
+    "namespace": "secret",
+    "description": "DataPack - Secret Totem - By:WorldPlay",
+    "pack_format": "32",
+    "target": "main.jmc",
+    "output": "."
+}

@@ -1,0 +1,2 @@
+execute if entity @s[tag=!admin] run return run tellraw @a {"text":"\u0422\u044b \u043d\u0435 \u043c\u043e\u0436\u0435\u0448\u044c \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u044c \u043a\u043e\u043c\u0430\u043d\u0434\u0443 ","color":"#ff585b","bold":true,"type":"text"}
+execute align xyz positioned ~0.5 ~ ~0.5 summon interaction run function secret:__private__/anonymous/0

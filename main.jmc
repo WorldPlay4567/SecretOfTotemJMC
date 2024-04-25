@@ -1,0 +1,77 @@
+import "scr/interaction/sword_of_gabriel";
+import "scr/barrel/barrel";
+
+Scoreboard.add(random, dummy);
+Scoreboard.add(picked_up, picked_up:emerald);
+
+Trigger.add(restart_object, ()=>{
+    sword_of_gabriel.spawn_interaction();
+
+});
+
+Trigger.add(spawn_barrel, ()=>{
+
+
+
+    barrel.spawn_barrel();
+
+});
+
+
+// Player.onEvent(picked_up:emerald, ()=> {
+
+// });
+
+function onEvent() {
+     execute as @a[scores={picked_up=1..}] at @s run {
+        scoreboard players remove @s picked_up 1;
+    random:@s = random value 1..5;
+    
+    switch (random:@s) {
+        case 1:
+            playsound emerald_1 ambient @a ~ ~ ~ 0.2;
+            playsound emerald_1_right ambient @a ~ ~ ~ 0.2;
+        case 2:
+            playsound emerald_2 ambient @a ~ ~ ~ 0.2;
+            playsound emerald_2_right ambient @a ~ ~ ~ 0.2;
+        case 3:
+            playsound emerald_3 ambient @a ~ ~ ~ 0.2;
+            playsound emerald_3_right ambient @a ~ ~ ~ 0.2;
+        case 4:
+            playsound emerald_4 ambient @a ~ ~ ~ 0.2;
+            playsound emerald_4_right ambient @a ~ ~ ~ 0.2;
+        case 5:
+            playsound emerald_5 ambient @a ~ ~ ~ 0.2;
+            playsound emerald_5_right ambient @a ~ ~ ~ 0.2;
+    }
+
+
+
+     }
+
+}
+function __tick__(){
+    loop();
+    sword_of_gabriel.main();
+    onEvent();
+    barrel.main();
+}
+
+function loop(){
+    execute as @e[type=minecraft:zombie] run{
+        effect give @s minecraft:fire_resistance infinite 1 true;
+        data modify entity @s Fire set value 0f;
+    }
+
+    // Партиклы от изумрудов
+
+    execute as @e[type=item,nbt={Item:{id:"minecraft:emerald"}}] at @s run {
+        particle minecraft:item emerald_block ~ ~0.3 ~ 0.2 0.2 0.2 0.05 1 ;
+
+
+
+    }
+
+
+
+}

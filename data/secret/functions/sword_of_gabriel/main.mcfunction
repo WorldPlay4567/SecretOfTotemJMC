@@ -1,0 +1,1 @@
+execute as @e[type=minecraft:interaction,tag=sword_of_gabriel] at @s if data entity @s interaction run function secret:__private__/if_else/0
