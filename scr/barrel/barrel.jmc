@@ -17,14 +17,16 @@ class barrel {
     }
 
     function spawn_barrel (){
-          if(entity @s[tag=!admin]) {
-        return run {
-            Text.tellraw(@a, "&<#ff585b,bold>Ты не можешь использовать команду ");
-        }
-    }   
-
-
-
+        if(entity @s[tag=!admin]) {
+          return run {
+            Text.tellraw(@a, "&<#ff585b,bold:false>[ERROR] &<gray,bold:false>Не достаточно прав ");
+          }
+        }   
+        if(!block ~ ~ ~ air) {
+          return run {
+            Text.tellraw(@a, "&<#ff585b,bold:false>[ERROR] &<gray,bold:false>Блоку нету места ");
+            }
+        }   
         execute align xyz positioned ~0.5 ~ ~0.5 summon interaction run {
             tag @s add barrel_emerald;
             setblock ~ ~ ~ barrel;

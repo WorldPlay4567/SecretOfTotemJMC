@@ -1,1 +1,1 @@
-execute as @a[scores={picked_up=1..}] at @s run function secret:__private__/anonymous/1
+execute as @a[scores={picked_up=1..}] at @s run function secret:__private__/anonymous/2

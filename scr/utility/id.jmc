@@ -1,0 +1,10 @@
+Scoreboard.add(id, dummy);
+
+class id {
+    function id_give(){
+        id:id ++;
+        execute as @e[distance=0..0.1] store result score @s id run scoreboard players get id id;
+
+    }
+
+}

@@ -1,2 +1,2 @@
-execute as @e[type=minecraft:zombie] run function secret:__private__/anonymous/2
+execute as @e[type=minecraft:zombie] run function secret:__private__/anonymous/3
 execute as @e[type=item,nbt={Item:{id:"minecraft:emerald"}}] at @s run particle minecraft:item emerald_block ~ ~0.3 ~ 0.2 0.2 0.2 0.05 1

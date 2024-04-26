@@ -1,6 +1,12 @@
 import "scr/interaction/sword_of_gabriel";
 import "scr/barrel/barrel";
 
+import "scr/mob/ocelot/ocelot";
+
+import "scr/utility/id";
+
+
+Team.add(no_colision, "no_colision", {collisionRule:never});
 Scoreboard.add(random, dummy);
 Scoreboard.add(picked_up, picked_up:emerald);
 
@@ -9,12 +15,13 @@ Trigger.add(restart_object, ()=>{
 
 });
 
+Trigger.add(spawn_ocelot, ()=>{
+    ocelot.spawn();
+
+});
+
 Trigger.add(spawn_barrel, ()=>{
-
-
-
     barrel.spawn_barrel();
-
 });
 
 
@@ -55,6 +62,7 @@ function __tick__(){
     sword_of_gabriel.main();
     onEvent();
     barrel.main();
+    ocelot.main();
 }
 
 function loop(){
